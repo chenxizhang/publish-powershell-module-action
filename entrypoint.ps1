@@ -8,7 +8,7 @@ Write-Host -Object ('Publishing module ({0}) to PowerShell Gallery' -f $env:INPU
 
 Get-ChildItem -Path $env:GITHUB_WORKSPACE | Format-Table -AutoSize
 Get-Module | Format-Table -AutoSize
-
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 Install-Module code365scripts.teams,code365scripts.weixin
 
 Publish-Module -Path $env:INPUT_MODULEPATH -NuGetApiKey $env:INPUT_NUGETAPIKEY
