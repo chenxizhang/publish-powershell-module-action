@@ -7,6 +7,9 @@ inputs:
   NuGetApiKey:
     description: The NuGet API Key for PowerShell Gallery, with permission to push this module.
     required: true
+  dependencies:
+    description: The dependency modules
+    required: false
 outputs:
   successfullyPublished: # id of output
     description: Whether or not the publish command was successful
@@ -16,3 +19,4 @@ runs:
   args:
     - ${{ inputs.NuGetApiKey }}
     - ${{ inputs.modulePath }}
+    - ${{ inputs.dependencies}}

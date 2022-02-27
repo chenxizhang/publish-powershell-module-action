@@ -8,8 +8,10 @@ Get-ChildItem -Path env:
 Write-Host -Object ('Publishing module ({0}) to PowerShell Gallery' -f $env:INPUT_MODULEPATH)
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 
-if()
-Install-Module 
+if($env:INPUT_DEPENDENCIES -ne $null){
+    Install-Module $env:INPUT_DEPENDENCIES.split(',')
+}
+
 
 Publish-Module -Path $env:INPUT_MODULEPATH -NuGetApiKey $env:INPUT_NUGETAPIKEY
 Write-Host -Object 'Finished publishing module to PowerShell Gallery'

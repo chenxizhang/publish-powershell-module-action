@@ -12,7 +12,7 @@ For example, if you named your secret `PS_GALLERY_KEY`:
 
 ```
       - name: Publish Module to PowerShell Gallery
-        uses: pcgeek86/publish-powershell-module-action@v19
+        uses: chenxizhang/publish-powershell-module-action@v22
         id: publish-module
         with:
           modulePath: YOURMODULENAME
